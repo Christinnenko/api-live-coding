@@ -9,7 +9,7 @@
 // 2. Реализовать форму регистрации (+)
 
 import { addTodo, deleteTodo, getTodos } from "./api.js";
-import { renderLoginComponent } from "./components/login-component.js";
+import { renderComponent } from "./components/login-component.js";
 
 let tasks = [];
 
@@ -28,7 +28,7 @@ const fetchTodosAndRender = () => {
 const renderApp = () => {
     const appEl = document.getElementById("app");
     if (!token) {
-        renderLoginComponent({
+        renderComponent({
             appEl,
             setToken: (newToken) => {
                 token = newToken;
