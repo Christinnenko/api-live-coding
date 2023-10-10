@@ -1,6 +1,6 @@
 import { loginUser, registerUser } from "../api.js";
 
-export function renderComponent({ appEl, setToken, fetchTodosAndRender }) {
+export function renderLoginComponent({ appEl, setToken, fetchTodosAndRender }) {
 
     let isLoginMode = true;
 
