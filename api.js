@@ -41,7 +41,7 @@ export function addTodo({ text, token }) {
 }
 
 //https://github.com/GlebkaF/webdev-hw-api/blob/main/pages/api/user/README.md
-export function login({ login, password }) {
+export function loginUser({ login, password }) {
     return fetch('https://wedev-api.sky.pro/api/user/login', {
         method: "POST",
         body: JSON.stringify({
@@ -49,6 +49,9 @@ export function login({ login, password }) {
             password,
         }),
     }).then((response) => {
+        if (response.status === 400) {
+            throw new Error('Неверный логин или пароль')
+        }
         return response.json();
     });
 }
